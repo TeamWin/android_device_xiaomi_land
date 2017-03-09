@@ -12,6 +12,7 @@ TARGET_SCREEN_WIDTH := 720
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+    charger
 
 # Fstab
 PRODUCT_COPY_FILES += \
