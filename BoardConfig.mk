@@ -62,7 +62,6 @@ TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
 
 # Debug flags
 
@@ -75,5 +74,4 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Device
 TARGET_INIT_VENDOR_LIB := libinit_land
-TARGET_RECOVERY_DEVICE_MODULES := libinit_land
 TARGET_UNIFIED_DEVICE := true
