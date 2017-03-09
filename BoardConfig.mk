@@ -65,8 +65,9 @@ TW_INCLUDE_NTFS_3G := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
 
 # Debug flags
-TARGET_USES_LOGD := true
-TWRP_INCLUDE_LOGCAT := true
+
+#TARGET_USES_LOGD := true
+#TWRP_INCLUDE_LOGCAT := true
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
