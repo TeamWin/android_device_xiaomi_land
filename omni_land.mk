@@ -14,24 +14,12 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+# Specify phone tech before including full_phone
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
+$(call inherit-product, device/xiaomi/land/full_land.mk)
 
-# Encryption
-PRODUCT_PACKAGES += \
-    libcryptfs_hw
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
-# Kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/kernel:kernel
-
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := rolex
-PRODUCT_NAME := full_rolex
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 4A
-PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_NAME := omni_land

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/xiaomi/rolex
+LOCAL_PATH := device/xiaomi/land
 
 # Architecture
 TARGET_ARCH := arm64
@@ -31,7 +31,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 TARGET_BOARD_SUFFIX := _64
 
 # Bootloader

@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_rolex-userdebug
-add_lunch_combo omni_rolex-eng
+add_lunch_combo omni_land-userdebug
+add_lunch_combo omni_land-eng
