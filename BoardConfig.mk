@@ -87,7 +87,7 @@ RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # Disable Mouse Cursor
-#TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_INPUT_BLACKLIST := "hbtp_vm"
 
 # exFAT FS Support
 TW_INCLUDE_FUSE_EXFAT := true
