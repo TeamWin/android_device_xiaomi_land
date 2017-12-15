@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/kernel:kernel
 
 # sdcardfs
-RODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
 
 # Time Zone data for recovery
