@@ -14,12 +14,22 @@
 # limitations under the License.
 #
 
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/omni/config/gsm.mk)
+# Release name
+PRODUCT_RELEASE_NAME := land
 
-$(call inherit-product, device/xiaomi/land/full_land.mk)
+$(call inherit-product, build/target/product/core_64_bit.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
-# Inherit some common Omni stuff.
+# Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
+# Time Zone data for recovery
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
+# Device identifier. This must come after all inclusions
+PRODUCT_BRAND := Xiaomi
+PRODUCT_DEVICE := land
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := Redmi 3S
 PRODUCT_NAME := omni_land

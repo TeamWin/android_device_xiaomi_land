@@ -15,5 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_land.mk \
-	$(LOCAL_DIR)/full_land.mk
+    $(LOCAL_DIR)/omni_land.mk
