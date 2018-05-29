@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/xiaomi/land
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -32,64 +30,41 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
-TARGET_BOARD_SUFFIX := _64
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8937
+TARGET_BOOTLOADER_BOARD_NAME := msm8937
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 androidboot.selinux=permissive
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/recovery/kernel
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78b0000 androidboot.selinux=permissive
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100
+TARGET_PREBUILT_KERNEL := device/xiaomi/land/prebuilt/Image.gz-dtb
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 58846064640 # (58846081024-16384)
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26301931008
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-
-# Qualcomm support
-BOARD_USES_QCOM_HARDWARE := true
-
-# TWRP Configuration
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_EXTRA_LANGUAGES := true
-TW_THEME := portrait_hdpi
-TW_INCLUDE_CRYPTO := true
-TW_MAX_BRIGHTNESS := 255
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_SCREEN_BLANK_ON_BOOT := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/twrp.fstab
 BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-
-# Disable Mouse Cursor
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 77
+TW_EXCLUDE_SUPERSU := true
+TW_EXTRA_LANGUAGES := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-
-# exFAT FS Support
-TW_INCLUDE_FUSE_EXFAT := true
-
-# NTFS Support
-TW_INCLUDE_FUSE_NTFS := true
+TW_THEME := portrait_hdpi
