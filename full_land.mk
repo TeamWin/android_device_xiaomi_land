@@ -26,13 +26,6 @@ PRODUCT_PACKAGES += \
     libcryptfs_hw
 
 # Kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/kernel:kernel
-
-# sdcardfs
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := land
 PRODUCT_NAME := full_land
