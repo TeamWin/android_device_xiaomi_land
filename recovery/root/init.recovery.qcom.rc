@@ -10,13 +10,9 @@ on fs
     chown system system /dev/ion
     install_keyring
 
-    wait /dev/block/platform/soc.0/7824900.sdhci/by-name/persist
-    mount ext4 /dev/block/platform/soc.0/7824900.sdhci/by-name/persist /persist nosuid nodev barrier=1
     restorecon_recursive /persist
     mkdir /persist/data 0700 system system
 
-    wait /dev/block/platform/soc.0/7824900.sdhci/by-name/modem
-    mount vfat /dev/block/platform/soc.0/7824900.sdhci/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
     symlink /firmware/image /vendor/firmware
 
     setprop crypto.ready 1
