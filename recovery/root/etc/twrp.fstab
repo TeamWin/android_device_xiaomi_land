@@ -2,7 +2,7 @@
 /system_image    emmc              /dev/block/bootdevice/by-name/system
 /vendor          ext4              /dev/block/bootdevice/by-name/cust       flags=wipeingui;display="Vendor"
 /vendor_image    emmc              /dev/block/bootdevice/by-name/cust
-/data            ext4              /dev/block/bootdevice/by-name/userdata   flags=length=-16384,encryptable=footer
+/data            ext4              /dev/block/bootdevice/by-name/userdata   flags=encryptable=footer
 /cache           ext4              /dev/block/bootdevice/by-name/cache
 /persist         ext4              /dev/block/bootdevice/by-name/persist    flags=backup=1;display="Persist"
 /boot            emmc              /dev/block/bootdevice/by-name/boot
